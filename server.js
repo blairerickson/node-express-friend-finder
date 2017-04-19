@@ -78,8 +78,8 @@ app.get("/api/tables", function(req, res) {
 
 
 // Search for Specific Character (or all characters) - provides JSON
-app.get("/api/waitlist", function(req, res) {
-    return res.json(waitlist);
+app.get("/api/friends", function(req, res) {
+    return res.json(friendbase);
 });
 
 
