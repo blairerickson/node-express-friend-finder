@@ -79,7 +79,7 @@ app.post("/api/friends", function(req, res) {
     console.log("post received");
     console.log(newperson);
 
-    friendbase.push(newreserve);
+    friendbase.push(newperson);
 
  });
 
