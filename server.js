@@ -66,24 +66,13 @@ app.get("/survey", function(req, res) {
     res.sendFile(path.join(__dirname, "survey.html"));
 });
 
-app.get("/reserve", function(req, res) {
-    res.sendFile(path.join(__dirname, "reservation.html"));
-});
-
-
-// Search for Specific Character (or all characters) - provides JSON
-app.get("/api/tables", function(req, res) {
-    return res.json(reserved);
-});
-
-
-// Search for Specific Character (or all characters) - provides JSON
+// See whole friends list - provides JSON
 app.get("/api/friends", function(req, res) {
     return res.json(friendbase);
 });
 
 
-// Create New Reservations - takes in JSON input
+// Create New Friend for Search - takes in JSON input
 app.post("/api/survey", function(req, res) {
     console.log("received new friend!");
     var newperson = req.body;
