@@ -73,7 +73,7 @@ app.get("/api/friends", function(req, res) {
 
 
 // Create New Friend for Search - takes in JSON input
-app.post("/api/survey", function(req, res) {
+app.post("/api/friends", function(req, res) {
     console.log("received new friend!");
     var newperson = req.body;
     console.log("post received");
