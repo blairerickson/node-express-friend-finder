@@ -84,23 +84,15 @@ app.get("/api/friends", function(req, res) {
 
 
 // Create New Reservations - takes in JSON input
-app.post("/api/reserve", function(req, res) {
-    console.log("received post!");
-    var newreserve = req.body;
+app.post("/api/survey", function(req, res) {
+    console.log("received new friend!");
+    var newperson = req.body;
     console.log("post received");
-    console.log(newreserve);
+    console.log(newperson);
 
-    if (reserved.length < 5)
-    {
-        reserved.push(newreserve);
-        res.json(true);
-    }
-    if (reserved.length >= 5)
-    {
-        waitlist.push(newreserve);
-        res.json(false);
-    }
-});
+    friendbase.push(newreserve);
+
+ });
 
 // Starts the server to begin listening
 // =============================================================
