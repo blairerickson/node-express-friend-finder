@@ -34,7 +34,8 @@ var friendbase = [{
         2,
         3,
         1
-    ]
+    ],
+    "compare":0,
 }, {
     "name":"Bob",
     "photo":"http://www.sullysullenberger.com/wp-content/uploads/2014/08/Sully-Hero-Shot-Homepage2014-720.png",
@@ -49,7 +50,8 @@ var friendbase = [{
         5,
         4,
         1
-    ]
+    ],
+    "compare":0,
 }, {
     "name":"Sally",
     "photo":"https://pbs.twimg.com/profile_images/497539872358281216/HhyHrWdZ.jpeg",
@@ -64,7 +66,8 @@ var friendbase = [{
         1,
         4,
         1
-    ]
+    ],
+    "compare":0,
 }
 ];
 
@@ -104,15 +107,16 @@ app.post("/api/friends", function(req, res) {
        // this algorithm compares the scores of the friend in the database to the new received friend data.
        console.log(compareA + " comparing to " + compareB);
         for(y=0;y<compareA.length;y++){
-            summed += (compareA[y] - compareB[y]);
+            summed += Math.abs(compareA[y] - compareB[y]); // Math.abs ensures the difference is always a positive int
             console.log(summed);
+
         }
 
     }
 
     friendbase.push(newperson);
 
-    return res.json(friendbase);
+    return res.json(friendbase[1]);
 
 });
 
