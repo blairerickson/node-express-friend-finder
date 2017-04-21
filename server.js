@@ -103,20 +103,26 @@ app.post("/api/friends", function(req, res) {
        var compareB = newperson.scores;
        var compareA = friendbase[i].scores;
        var summed =0;
+       var highscore = [100,0];
 
        // this algorithm compares the scores of the friend in the database to the new received friend data.
        console.log(compareA + " comparing to " + compareB);
         for(y=0;y<compareA.length;y++){
             summed += Math.abs(compareA[y] - compareB[y]); // Math.abs ensures the difference is always a positive int
-            console.log(summed);
-
         }
+        console.log("comparing " + friendbase[i].name + friendbase[i].scores + "to the " + newperson.name + newperson.scores + " and the difference is " + summed);
 
+        if (summed < highscore[0])
+        {
+            highscore[0] = summed;
+            highscore[1] = i;
+            console.log("new match score is " + summed + " and the position in friendbase is " + highscore[1]);
+        }
     }
-
+    var marker = highscore[1];
     friendbase.push(newperson);
 
-    return res.json(friendbase[1]);
+    return res.json(friendbase[marker]);
 
 });
 
