@@ -122,7 +122,7 @@ app.post("/api/friends", function(req, res) {
     var marker = highscore[1];
     friendbase.push(newperson);
 
-    return res.json(friendbase[marker]);
+    return res.json(friendbase[marker]);  // returns the correct person based on the most similar answers
 
 });
 
