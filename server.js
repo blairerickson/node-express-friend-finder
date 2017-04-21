@@ -34,10 +34,9 @@ var friendbase = [{
         2,
         3,
         1
-    ],
-    "compare":0,
+    ]
 }, {
-    "name":"Bob",
+    "name":"Sully",
     "photo":"http://www.sullysullenberger.com/wp-content/uploads/2014/08/Sully-Hero-Shot-Homepage2014-720.png",
     "scores":[
         5,
@@ -50,8 +49,7 @@ var friendbase = [{
         5,
         4,
         1
-    ],
-    "compare":0,
+    ]
 }, {
     "name":"Sally",
     "photo":"https://pbs.twimg.com/profile_images/497539872358281216/HhyHrWdZ.jpeg",
@@ -66,8 +64,7 @@ var friendbase = [{
         1,
         4,
         1
-    ],
-    "compare":0,
+    ]
 }
 ];
 
